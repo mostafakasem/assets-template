@@ -1,0 +1,21 @@
+.select-tags{ 
+    .p-buttonset .p-button{
+        padding: 0.6rem 1rem;
+        border: 0;
+        background: #F0F0F0;
+        line-height: 1;
+        border-radius: 5px !important;
+        margin: 5px 0;
+        @extend .me-2;
+        &:focus,
+        &:hover{
+            outline: none !important;
+            box-shadow: 0 0 0  !important;
+            background-color: #eee ;
+        }
+        &.p-highlight{
+            background-color: $primary;
+            color: #fff;
+        }
+    }
+}

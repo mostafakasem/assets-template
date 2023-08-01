@@ -1,0 +1,105 @@
+
+// ---------- Radiobutton &  Checkbox
+.p-field-checkbox,
+.p-field-radiobutton{
+    padding-block: .5rem;
+    padding-inline-end: 1rem !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.5;
+}
+.p-checkbox .p-checkbox-box,
+.p-radiobutton .p-radiobutton-box{
+    background: transparent;
+}
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus,
+.p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-focus{
+    border-color: $primary;
+}
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover,
+.p-checkbox .p-checkbox-box.p-highlight,
+.p-radiobutton:not(.p-radiobutton-disabled) .p-radiobutton-box.p-highlight:hover,
+.p-radiobutton .p-radiobutton-box.p-highlight {
+    border-color: $primary;
+    background: $primary;
+}
+.radio-with-icon{
+    gap: 2rem;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    justify-content: flex-start;
+    padding: .5rem 0;
+    .p-field-checkbox, 
+    .p-field-radiobutton{
+        padding: 0 !important;
+    }
+    .p-field-radiobutton{
+        p-radiobutton{
+            display: none;
+        }
+        label{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem .5rem;
+            border: 1px solid;
+            border-radius: $border-radius;
+            color: #BBC5D3;
+            background-color: #fff;
+            gap: 0.5rem;
+            min-width: 160px ;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+            z-index: 5;
+            position: relative;
+            img{
+                filter: grayscale(1);
+                opacity: 0.6;
+                height: 36px;
+                width: auto;
+                object-fit: contain;
+                transition: all .3s ease-in-out;
+            }
+            &:hover,
+            &:focus{
+                background-color: rgb(var(--bs-light-rgb));
+                img{
+                    opacity: .8;
+                }
+            }
+        }
+        // label.selected,
+        &:has(.p-radiobutton-checked) label{
+            color: $primary;
+            background-color: #EFF7FB;
+            span + span{
+                color: #495770;
+                font-weight: 600;
+            }
+            img{
+                filter: grayscale(0);
+                opacity: 1;
+            }
+        }
+    }
+}
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+    width: 9px;
+    height: 9px;
+}
+
+@media screen and (min-width:0) and (max-width:600px) {  
+    fieldset.d-flex{
+        flex-wrap: wrap !important;
+    }
+    .radio-with-icon{
+        gap:  1rem;
+        // grid-template-columns: repeat(auto-fit, minmax(140px, auto));
+        grid-template-columns: repeat(2, 1fr);
+        .p-field-radiobutton label{
+            width: 100%;
+        }
+    }
+}

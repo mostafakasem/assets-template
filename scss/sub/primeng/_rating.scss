@@ -1,0 +1,17 @@
+// ---------- rating stars
+.p-rating{ 
+    [dir=rtl] &{ 
+        // direction: ltr;
+        .p-rating-icon:first-child {
+            margin-left: 0.5rem;
+        }
+    }
+    .p-rating-icon{
+        font-size: 1.4rem;
+    }
+    .p-rating-icon.pi-star,
+    .p-rating-icon,
+    &:not(.p-disabled):not(.p-readonly) .p-rating-icon:hover{
+        color: $primary;
+    }
+} 

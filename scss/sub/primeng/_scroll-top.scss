@@ -1,0 +1,22 @@
+// ---------- ScrollTop
+
+body .p-scrolltop.p-link{
+    background: $primary; 
+    bottom: 1rem;
+    left: 1rem;
+    right: auto;
+    [dir=ltr] &{ 
+        left: auto;    
+        right: 1rem;
+    }
+    &:hover,
+    &:focus{
+        background: $primary; 
+        opacity: .8;
+    }
+}
+@media screen and (min-width:0) and (max-width:767px) {  
+    .p-scrolltop{
+        transform: scale(0.7); 
+    }
+}

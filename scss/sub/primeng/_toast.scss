@@ -1,0 +1,14 @@
+// ---------- Toast
+[dir="rtl"] {
+    .p-toast .p-toast-message{
+        border-width: 0 6px 0 0;
+    }
+    .p-toast-top-right {
+        left: 20px;
+        right: auto;
+        }
+    } 
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-text {
+    margin: 0;
+    margin-inline-start: 1rem;
+}

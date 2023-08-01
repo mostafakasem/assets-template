@@ -1,0 +1,112 @@
+
+// ---------- Calendar
+body .p-calendar{
+    display: block;
+    height: $form-control-height;
+    & > input{
+        @extend .form-control;
+        @extend .form-date;
+        @extend .w-100;
+    }
+    .pi-chevron-left,
+    .pi-chevron-right{
+        [dir=rtl] &{
+            transform: rotate(180deg);
+        }
+    }
+
+    .p-datepicker{
+        padding: 0;
+        .p-datepicker-calendar-container{
+            padding: 10px;   
+        }
+        table {
+            margin: 0;
+            td {
+                padding: 5px 0;
+                &.p-datepicker-today > span {
+                    background: #0000;
+                    position: relative ;
+                    color: $primary;
+                    font-weight: 700;;
+                    &:after{
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        background: $primary;
+                        position: absolute;
+                        border-radius: 50%;
+                        bottom:0;
+                        right: 45%;
+                        right: calc( 50% - 3px);
+                    }
+                }
+                & > span.p-highlight {
+                    color: #fff;
+                    background: $primary;
+                }
+            }
+            th{
+                padding: 5px 0;
+                // color: $primary;
+                color: #6B778C;
+                text-align: center;
+                // background: #f8f9fa; 
+            }
+        }   
+        .p-datepicker-header .p-datepicker-title{
+            line-height: 1;
+            width: 80%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
+
+            display: flex;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #000;
+            direction: ltr;
+            // .p-datepicker-month{  }
+            // .p-datepicker-year{  }
+            & > span{
+                font-size: 1.2rem;
+            }
+            select{
+                margin: 0;
+                padding: 5px;
+                border-color: #f5f5f5;
+                border-radius: 3px;
+                background: #fff;
+                width: 45%;
+                font-size: 1rem;
+            }
+        }
+    }
+    .p-datepicker:not(.p-datepicker-inline) .p-datepicker-header{
+        background: #f8f9fa; 
+    }
+    & > input[readonly]{
+        background-color: #fff;
+        height: $form-control-height;
+    }
+} 
+body .calendar-lg{
+    .p-calendar {
+        height: 100%;
+        line-height: 2;
+    }
+    input{
+        min-height: 43px;
+        border-radius: 5px;
+        font-size: 1.25rem;
+        padding-top: 10px;
+        // @extend .form-control-lg;
+    }
+    input::placeholder { 
+        opacity: .5;
+        color: #000;
+    }
+}
+.custom-calendar{
+    
+}

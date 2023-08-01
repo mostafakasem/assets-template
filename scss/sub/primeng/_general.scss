@@ -1,0 +1,59 @@
+$form-control-height: $control-height;
+.p-component,
+.p-inputtext {
+    font-family: var(--bs-font-sans-serif);
+}
+ 
+// ---------- validation
+ 
+.ng-invalid.ng-dirty{  
+    @extend .is-invalid; 
+}
+
+// .ng-valid{  
+//     @extend .is-valid; 
+// }
+
+p-dropdown,
+p-multiselect{
+    &.is-invalid, 
+    &.ng-invalid.ng-dirty{
+        padding: 0!important;
+        background: none!important;
+        border: 0!important;
+        & > .p-component{
+            border: 1px solid var(--bs-danger)!important;  
+        }
+    }
+}
+form{
+    &.is-invalid, 
+    &.ng-invalid.ng-dirty{
+        padding: 0!important;
+        background: none!important;
+        border: 0!important;
+    }
+}
+.p-field-radiobutton,
+.p-field-checkbox{
+    &.is-invalid{
+        border-color: var(--bs-danger) !important;
+    }
+}
+.custom-upload .p-fileupload .p-fileupload-row,
+.custom-upload .p-fileupload .p-fileupload-buttonbar,
+body .p-dropdown,
+body .p-multiselect{
+    background-color: var(--bs-form-control-bg);
+    border-color: var(--bs-border-color);
+    min-height: $form-control-height ;
+}
+.p-inputtext,
+.p-multiselect .p-multiselect-label{
+    height: 100%; 
+    padding: 0.65rem 0.75rem ;
+}
+.p-multiselect:not(.p-disabled):hover,
+.p-dropdown:not(.p-disabled):hover {
+    border-color: var(--bs-border-color);
+}

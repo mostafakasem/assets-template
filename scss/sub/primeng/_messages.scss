@@ -1,0 +1,37 @@
+// ---------- Messages 14.0
+.p-message.p-message-success,
+.p-message.p-message-info,
+.p-message.p-message-warn ,
+.p-message.p-message-error {
+   border:1px solid #ccc;
+}
+.p-message.p-message-info .p-message-icon{
+    color: #365995;
+}
+.alert-success,
+.p-message.p-message-success {
+    background: #F7FDF4;
+    border-color: #79C172;
+    color: #499842;
+}
+.alert-info,
+.p-message.p-message-info {
+    background: #EBF0F8;
+    border-color: #5074b1;
+    color: #365995;
+}
+.alert-warning,
+.p-message.p-message-warn {
+    background: #FDF2E5;
+    border-color: #F3AA4B;
+    color: #BF7A1F;
+}
+.alert-danger,
+.p-message.p-message-error {
+    background: #FDE6E5;
+    border-color: #BF524D;
+    color: #BF524D;
+}
+.p-message .p-message-wrapper{
+    padding: .8rem 1rem;
+}

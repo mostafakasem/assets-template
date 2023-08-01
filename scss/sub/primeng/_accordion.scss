@@ -1,0 +1,76 @@
+
+// ---------- Accordion
+
+body .p-accordion {
+    .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+        margin: 0;
+        position: absolute;
+        right: 1rem;
+        top: 1.5rem;
+        visibility: hidden;
+        [dir=rtl] &{ 
+            left: 1rem;
+            right: auto;
+            transform: rotate(90deg);
+        }
+    }
+    .p-accordion-header .p-accordion-header-link,
+    .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link,
+    .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link,
+    .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+        // background: $primary;
+        // border-color: $primary;
+        // color: #fff;
+        // padding: 1.2rem 1rem;
+        // font-size: 1.3rem;
+        @extend .special-title;
+        margin: 0;
+        border: 1px solid #D2DCE0;
+        padding-block: .75rem;
+        // font-size: 1rem;
+    }
+    p-accordiontab .p-accordion-tab {
+        margin-bottom: 1rem;
+    }
+    p-accordiontab .p-accordion-content{
+        border: 0 ;
+        padding: 0; 
+    }  
+    .p-highlight .step-number{
+        background-color: $primary;
+        font-size: 1rem;
+        // &:before{
+        //     display: none;
+        // }
+    }
+    .p-accordion-header:not(.p-disabled) .p-accordion-header-link:focus{
+        box-shadow: 0 0 10px 0.2rem #e9e9e9; 
+    }
+}
+
+body .new-accordion .p-accordion{
+    .p-accordion-header .p-accordion-header-link,
+    .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link,
+    .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link,
+    .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+        // background: $primary;
+        // border-color: $primary;
+        // color: #fff;
+        // padding: 1.2rem 1rem;
+        // font-size: 1.3rem;
+        // @extend .special-title;
+        margin: 0;
+        border: 1px solid #D2DCE0;
+        padding-block: .75rem;
+        background-color: var(--bs-heading-color);
+        color: #fff;
+        min-height: 64px;
+        // font-size: 1rem;
+        &:before{
+            display: none;
+        }
+    }
+    .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon {
+        visibility: visible;
+    }
+}

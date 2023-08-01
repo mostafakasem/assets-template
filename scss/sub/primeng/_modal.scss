@@ -1,0 +1,43 @@
+
+// ---------- Modal
+ 
+body .p-dialog-mask.p-component-overlay{
+    background-color: rgba(0,0,0,0.674);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+} 
+body .p-dialog{  
+    max-width: 14;
+    border-radius: $border-radius;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 0 0 0;
+    max-width: 1400px;
+    .p-dialog-header {
+        background-color: #fff;
+        padding: 0;
+        @extend .fs-5;
+        @extend .fw-bold;
+        @extend .text-secondary;
+        padding: 1.5rem 1rem;
+    }
+    .p-dialog-footer { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    .p-dialog-content{
+        padding: 1rem;
+    }
+}  
+
+@media screen and (min-width:0) and (max-width:767px) {    
+    body .mobile-full{
+        min-height: calc(100vh - 100px);
+        top: 0;
+        position: fixed;
+        left: 0;
+    }
+}

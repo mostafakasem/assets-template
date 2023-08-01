@@ -1,0 +1,225 @@
+// ---------- wizard
+
+.custom-wizard{
+    --wz-bg: #D2DCE0;
+    --wz-text: #A4B1C4;
+    --wz-primary: var(--bs-primary-text);
+    @extend .mt-n3;
+    .p-steps .p-steps-item {
+        &:before{
+            border-top: 3px solid var(--wz-primary); 
+            bottom: -.5rem;
+            top: auto;
+        }
+        &.p-disabled{
+            opacity: 1;
+        }
+        .p-menuitem-link{
+            flex-direction: row;
+            padding: 1rem;
+            width: 100%;
+            .p-steps-number{
+                color: #fff;
+                // background-color: var(--wz-bg);
+                background-color: var(--wz-primary);
+                margin-inline-end: 1rem;
+            }
+            .p-steps-title{
+                margin: 0;
+                // color: var(--wz-text);
+                color: var(--wz-primary);
+                font-weight: 500;
+            }
+        } 
+        &.p-highlight ~ li{
+            .p-menuitem-link{
+                .p-steps-number{
+                    background-color: var(--wz-bg);
+                }
+                .p-steps-title{
+                    color: var(--wz-text);
+                }
+            } 
+            &:before{
+                border-top: 2px solid var(--wz-bg); 
+            }
+        }
+        &.p-highlight{
+            .p-steps-number{ 
+                background-color: var(--wz-primary);
+            }
+            .p-steps-title{
+                color: var(--wz-primary);
+            }
+            &:before{
+                border-color: var(--wz-primary);
+            }
+        }
+        
+    }
+} 
+.steps-count{
+    position: relative;
+    z-index: 2;
+    display: none;
+    .steps-count-in{
+        position: absolute;
+        top: -90px;
+        right: 0;
+        background: var(--body-bg);
+        padding: 0.5rem;
+        line-height: 1;
+        border-radius: 4px;
+        [dir=rtl] &{
+            right: auto;
+            left: 0;
+        }
+    }
+}
+.p-steps .p-steps-item .p-menuitem-link:not(.p-disabled):focus{
+    box-shadow: 0 0 0;
+    background-color: rgba( $primary, 0.1);
+}
+.p-accordion-header.p-disabled{
+    opacity: 1;
+}
+.step-number{
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    display: inline-block;
+    display: grid;
+    place-items: center;
+    background-color: $secondary;
+    border-radius: 50%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-inline-end: 1rem;
+    transition: all .5s ease-in-out;
+    padding: 1px 0 0;
+    .active &{
+        background-color: $primary;
+    }
+    &:before{
+        content: "\e909";
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        font-size: 1rem;
+        display: none;
+        place-items: center; 
+        font-family: 'primeicons';
+        font-style: normal;
+        font-weight: normal;
+        font-feature-settings: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        // display: inline-block;
+        -webkit-font-smoothing: antialiased;
+    }
+    // .p-highlight &,
+    .view-mode &,
+    .done &{
+        background-color: $primary;
+        font-size: 0; 
+        &:before{ 
+            display: grid; 
+        }
+    }
+}
+// manage add/edit mode
+.view-mode{
+    p-accordiontab .step-number{
+        background-color: $primary;
+        font-size: 0; 
+        &:before{ 
+            display: grid; 
+        }
+    }
+    p-accordiontab .p-highlight .step-number{
+        background-color: $primary;
+        &:before{
+            display: none;
+        }
+    }
+}
+.add-mode{
+    p-accordiontab .step-number{
+        background-color: $primary;
+        &:before{
+            display: grid;
+        }
+    }
+    p-accordiontab .p-highlight .step-number{
+        background-color: $primary;
+        &:before{
+            display: none;
+        }
+    }
+    p-accordiontab[ng-reflect-selected="true"] ~ p-accordiontab{ 
+        .step-number{
+            background-color: $secondary;
+            &:before{
+                display: none;
+            }
+        }
+    } 
+}
+
+@media screen and (min-width:0) and (max-width:992px) {  
+    .custom-wizard { 
+        .p-steps {
+            ul{
+                min-height: 50px;
+                position: relative;
+            }
+            .p-steps-item{    
+                width: 20%;    
+                position: initial;
+                &:before{
+                    width: 95%;
+                    margin-top: 50px;
+                    position: relative;
+                    top: auto;
+                    bottom: auto;
+                }
+                .p-menuitem-link{
+                    overflow: visible;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 90vw;
+                    [dir=rtl] &{
+                        right: 0;
+                        left: auto;
+                    }
+                }
+                .p-steps-title,
+                .p-steps-number{
+                    display: none;
+                }
+                &.p-highlight{
+                    // display: block;
+                    .p-steps-title{
+                        display: block ;
+                        white-space: nowrap;
+                    }
+                    .p-steps-number{
+                        display: grid;
+                    }
+                }
+            }
+        }
+        
+    } 
+    .steps-count{
+        display: block;
+    }
+    .custom-wizard .p-steps .p-steps-item .p-menuitem-link{
+        padding: .5rem 0;
+    }
+}

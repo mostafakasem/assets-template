@@ -1,0 +1,36 @@
+
+// ---------- TabView
+body .p-tabview {
+    .p-tabview-nav {
+        padding: 0;
+        li .p-tabview-nav-link{ 
+            color: var(--custom-form-label-color); 
+            font-weight: 500; 
+            font-size: 1.05rem;
+            padding: 1rem;
+        }
+        li.p-highlight .p-tabview-nav-link{
+            border-color: $primary;
+            color: $primary;
+            // background-color: rgba($primary, 0.1);
+            background-color: #0000;
+        }
+        .p-tabview-ink-bar{
+            background-color: $primary;
+        }
+        .p-tabview-title{
+            font-size: 1.1rem;
+        }
+    } 
+    .p-tabview-panels{
+        padding: 1rem 0;
+    } 
+}
+
+@media screen and (min-width:0) and (max-width:992px) {
+    body .p-tabview .p-tabview-nav li .p-tabview-nav-link{
+        height: 100%;
+        font-size: .9rem;
+        white-space: nowrap;
+    }
+}

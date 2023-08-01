@@ -1,0 +1,11 @@
+.p-slider .p-slider-handle{
+    border-color: $primary;
+    background: $primary;
+}
+.p-slider .p-slider-range{
+    background: $primary;
+}
+.p-slider:not(.p-disabled) .p-slider-handle:hover{
+    background: $primary;
+    border-color: $primary;
+}

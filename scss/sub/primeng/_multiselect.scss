@@ -1,0 +1,51 @@
+
+// ---------- Multiseclet 
+body .p-multiselect{
+    width:100%;
+    // @extend .form-select; 
+    padding: 0!important; 
+    height: $form-control-height;
+    // @extend .form-control;
+    .p-multiselect-trigger{
+        // display: none;
+        transform: scale(.8);
+    }
+    .p-inputtext {
+        padding: 0.5rem 0.75rem;
+    }
+    .p-multiselect-panel .p-multiselect-items .p-multiselect-item{
+        padding: 0.5rem 1rem;
+        color: $secondary;
+    }
+    .p-checkbox-box.p-highlight{
+        border-color: $secondary;
+        background: $secondary;
+    }
+}
+// p-dropdownitem li .p-component{
+//     float: none!important;
+// }
+[dir=rtl]{
+    .p-multiselect-panel .p-multiselect-items .p-multiselect-item .p-checkbox,
+    .p-multiselect-panel .p-multiselect-header .p-checkbox{
+        margin-left: 0.5rem;
+        margin-right: 0;
+    }
+    .p-multiselect.p-multiselect-chip .p-multiselect-token .p-multiselect-token-icon,
+    .p-multiselect-panel .p-multiselect-header .p-multiselect-close{
+        margin-left: 0;
+        margin-right: 0.5rem;
+    }
+    .p-multiselect-panel .p-multiselect-header .p-multiselect-filter-container .p-multiselect-filter-icon {
+        left: 0.5rem;
+        right: auto;
+    }
+    .p-multiselect-panel .p-multiselect-header .p-multiselect-filter-container .p-inputtext {
+        padding-left: 1.5rem;
+        padding-right: .5rem;
+    }
+    .p-multiselect.p-multiselect-chip .p-multiselect-token{
+        margin-left: 0.5rem;
+        margin-right:0;
+    }
+}
